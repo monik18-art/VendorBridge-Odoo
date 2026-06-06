@@ -14,6 +14,8 @@ export const metadata: Metadata = {
   authors: [{ name: "VendorBridge Team" }],
 };
 
+import { Sidebar } from "@/components/layout/Sidebar";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,8 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full`}>
-      <body className="font-sans antialiased h-full">
-        {children}
+      <body className="font-sans antialiased h-full bg-slate-50 text-slate-900">
+        <Sidebar />
+        <main className="pl-64 min-h-screen">
+          {children}
+        </main>
       </body>
     </html>
   );

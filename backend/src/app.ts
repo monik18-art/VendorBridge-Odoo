@@ -2,6 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const authRoutes = require('./routes/auth.routes');
+import dashboardRoutes from './routes/dashboard.routes';
 
 import type { Request, Response } from 'express';
 
@@ -20,5 +21,6 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/dashboard', dashboardRoutes);
 
 module.exports = app;
